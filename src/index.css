@@ -1,0 +1,134 @@
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html,
+#root {
+  width: 100%;
+  height: 100%;
+  font-family: Arial, sans-serif;
+}
+
+.hero {
+  position: relative;
+  height: 100vh;
+  background: #f4f2ef;
+  overflow: hidden;
+}
+
+.hero-character {
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 650px;
+    z-index: 1;
+}
+
+.hero-character img:first-child {
+    width: 100%;
+    display: block;
+}
+
+.pupil {
+    position: absolute;
+    width: 4.9%;
+    height: auto;
+    pointer-events: none;
+    z-index: 2;
+    transition: transform 0.08s ease-out;
+}
+
+.pupil-left {
+    top: 22.9%;
+    left: 39%;
+}
+
+.pupil-right {
+    top: 20.8%;
+    left: 54%;
+}
+
+.project-image {
+  width: 90px;
+  height: 90px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 3px solid white;
+  background: white;
+}
+
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.project-card h3 {
+  margin-top: 8px;
+  font-size: 16px;
+  text-shadow: 0 2px 4px rgba(0,0,0,.4);
+  text-align: center;
+  color: brown;
+}
+
+/* Positions */
+
+.project-one { top:12%; left:25%;
+    animation-delay: 0s;
+}
+.project-two { top:8%; right:24%;
+    animation-delay: 0.5s;
+}
+.project-three { top:20%; right:8%;
+    animation-delay: 1s;
+}
+.project-four { top:35%; left:8%;
+    animation-delay: 1.5s;
+}
+.project-five { top:48%; left:28%;
+    animation-delay: 0.7s;
+}
+.project-six { top:40%; right:20%;
+    animation-delay: 1.2s;
+}
+.project-seven { top:70%; left:16%;
+    animation-delay: 0.3s;
+}
+.project-eight { top:60%; right:8%;
+    animation-delay: 0.9s;
+}
+
+
+
+/* Floating animation */
+
+.project-card {
+  position: absolute;
+  text-decoration: none;
+  color: white;
+  text-align: center;
+  animation: floating 4s ease-in-out infinite;
+  transition: scale 0.3s ease;
+}
+
+.project-card:hover {
+  scale: 1.08;
+  z-index: 5;
+}
+
+@keyframes floating {
+  0%,
+  100% {
+    translate: var(--move-x, 0px) var(--move-y, 0px);
+  }
+
+  50% {
+    translate: var(--move-x, 0px) calc(var(--move-y, 0px) - 12px);
+  }
+}
